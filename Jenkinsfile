@@ -33,4 +33,9 @@ node {
             app.push("latest")
         }
     }
+
+        sshagent(['my-ssh-key']){
+    sh 'ssh ubuntu@ip-172-31-23-3  kubectl create deployment cw2 --image=hub.docker.com/r/anasir206/cw2:$BUILD_NUMBER'
+ 
+    }
 }
